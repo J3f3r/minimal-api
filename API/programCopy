@@ -262,6 +262,7 @@ app.MapGet("/veiculos/{id}", ([FromRoute] int id, IVeiculoServico veiculoServico
 .RequireAuthorization(new AuthorizeAttribute {Roles = "Adm, Editor"})// 0s 2 podem alterar este item
 .WithTags("Veiculos");
 
+// Editor não tem autorização para atualizar veículos, somente adm tem autorização total
 app.MapPut("/veiculos/{id}", ([FromRoute] int id, VeiculoDTO veiculoDTO,IVeiculoServico veiculoServico) => {
     // no swagger não precisa passar id no schema
     var veiculo = veiculoServico.BuscaPorId(id);

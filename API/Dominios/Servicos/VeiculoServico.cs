@@ -36,15 +36,19 @@ public class VeiculoServico : IVeiculoServico
         _contexto.Veiculos.Add(veiculo);
         _contexto.SaveChanges();
     }
+    
 
     public List<Veiculo> Todos(int? pagina = 1, string? nome = null, string? marca = null)
-    {
+    {// realiza a consulta à tabela de Veículos com suporte para filtros e paginação
+
         var query = _contexto.Veiculos.AsQueryable();
+        // Se o parâmetro nome não for nulo ou vazio, a consulta é filtrada para incluir apenas veículos cujo nome contenha a string fornecida (ignorando maiúsculas e minúsculas).
         if(!string.IsNullOrEmpty(nome))
         {
             query = query.Where(v => EF.Functions.Like(v.Nome.ToLower(), $"%{nome}%"));
         }
-        // serve para a paginação
+
+        // Ele retorna até 10 veículos por página, começando do item correspondente à página solicitada.
         int itemsnPorPagina = 10;
 
         if(pagina != null)
