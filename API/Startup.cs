@@ -75,8 +75,8 @@ public class Startup
 
         services.AddDbContext<DbContexto>(options => {
             options.UseMySql(
-                Configuration.GetConnectionString("MySql"),
-                ServerVersion.AutoDetect(Configuration.GetConnectionString("MySql"))
+                Configuration.GetConnectionString("DefaultConnection"),
+                ServerVersion.AutoDetect(Configuration.GetConnectionString("DefaultConnection"))
             );
         });
     }
