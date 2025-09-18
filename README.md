@@ -1,7 +1,9 @@
 # Minimal API
 
-**Projeto:** Minimal API  
-**Autor:** Jeferson Martins com tutorial da DIO em Bootcamp em .NET 
+**Projeto:** Minimal API
+
+**Autor:** Jeferson Martins com tutorial da DIO em Bootcamp em .NET
+
 **Objetivo:** Projeto de estudo/prática em .NET (C#) para aprender a montar uma API leve, com testes automatizados, migrações e preparo para deploy. Feito por um estudante de TI que está se preparando para vagas Jr em backend.
 
 ---
